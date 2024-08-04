@@ -231,12 +231,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 552808986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18aac50d3886490439bf2e718c486a60, type: 3}
+  m_Script: {fileID: 11500000, guid: a3ae485a76cdfa04286fa250a4236137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
-  _rotationSpeed: 0
-  _scale: 0.1
+  _scale: 0.5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,12 +520,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1273571488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18aac50d3886490439bf2e718c486a60, type: 3}
+  m_Script: {fileID: 11500000, guid: 82802f0f7aeab3348ac4f6de5f49b693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
-  _rotationSpeed: 20
-  _scale: 0
+  _rotationSpeed: 5
 --- !u!1 &1894034133
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +537,8 @@ GameObject:
   - component: {fileID: 1894034135}
   - component: {fileID: 1894034134}
   - component: {fileID: 1894034138}
+  - component: {fileID: 1894034140}
+  - component: {fileID: 1894034139}
   m_Layer: 0
   m_Name: CubeWithDirection
   m_TagString: Untagged
@@ -639,8 +637,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _rotationSpeed: 15
-  _scale: 0.1
+--- !u!114 &1894034139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894034133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ae485a76cdfa04286fa250a4236137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scale: 0.5
+--- !u!114 &1894034140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894034133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82802f0f7aeab3348ac4f6de5f49b693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 5
 --- !u!1 &2110152355
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,8 +696,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  _rotationSpeed: 0
-  _scale: 0
 --- !u!135 &2110152357
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -59,6 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Movement.cs" />
+    <Compile Include="Assets\Rotator.cs" />
+    <Compile Include="Assets\Scaler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
