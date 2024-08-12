@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 public class Counter : MonoBehaviour
-{   
+{
     [SerializeField] private float _countStepTime = 0.5f;
     [SerializeField] private float _countStep = 1f;
 
@@ -13,7 +13,7 @@ public class Counter : MonoBehaviour
     private Coroutine _countCoroutine;
     private byte _mousebutton = 0;
 
-    public static Action<float> Changed;
+    public event Action<float> Changed;
 
     private void Awake()
     {
