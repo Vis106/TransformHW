@@ -11,7 +11,7 @@ public class Counter : MonoBehaviour
     private bool _isCounting = false;
     private WaitForSeconds _wait;
     private Coroutine _countCoroutine;
-    private byte _mousebutton = 0;
+    private byte _mouseButton = 0;
 
     public event Action<float> Changed;
 
@@ -23,31 +23,21 @@ public class Counter : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(_mousebutton))
+        if (Input.GetMouseButtonDown(_mouseButton))
         {
             if (_isCounting == false)
             {
                 _isCounting = true;
-                Start();
+                _countCoroutine = StartCoroutine(CountingBySteps());
             }
             else
             {
                 _isCounting = false;
-                Stop();
+                if (_countCoroutine != null)
+                {
+                    StopCoroutine(_countCoroutine);
+                }
             }
-        }
-    }
-
-    public void Start()
-    {
-        _countCoroutine = StartCoroutine(CountingBySteps());
-    }
-
-    public void Stop()
-    {
-        if (_countCoroutine != null)
-        {
-            StopCoroutine(_countCoroutine);
         }
     }
 
