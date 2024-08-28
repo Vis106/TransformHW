@@ -115,6 +115,8 @@ MonoBehaviour:
   _decreaseChanceRate: 0.5
   _decreaseScaleRate: 0.5
   _chanceCreateCube: 100
+  _cubePrefab: {fileID: 0}
+  _creator: {fileID: 2588246905805519429}
 --- !u!54 &2588246905805519428
 Rigidbody:
   m_ObjectHideFlags: 0
