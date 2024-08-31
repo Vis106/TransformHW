@@ -6,39 +6,34 @@ public class Creator : MonoBehaviour
 {
     [SerializeField] private float _explotionForce;
     [SerializeField] private float _explotionRadius;
-   
+
     private int _maxCubeInstanstiate = 6;
     private int _minCubeInstanstiate = 2;
     private Cube _cubePrefab;
 
-    public void Divide()
+    public void Divide(Cube _currentCube)
     {
-        _cubePrefab = GetComponent<Cube>();
-        Explode();        
-        CreateCubes(_cubePrefab.CanCreate());       
+        Explode(CreateCubes(_currentCube));   
     }
 
-    private void Explode()
+    private void Explode(List<Cube> cubes)
     {
-        foreach (Cube explodableObject in CreateCubes(_cubePrefab.CanCreate()))
+        foreach (Cube explodableObject in cubes)
         {
             explodableObject.TryGetComponent<Rigidbody>(out Rigidbody explodableCube);
             explodableCube?.AddExplosionForce(_explotionForce, transform.position, _explotionRadius);
         }
     }
 
-    private List<Cube> CreateCubes(bool canCreate)
+    private List<Cube> CreateCubes(Cube _currentCube)
     {
         List<Cube> cubes = new();
-        int cubeCount = Random.Range(_minCubeInstanstiate, _maxCubeInstanstiate);       
+        int cubesCount = Random.Range(_minCubeInstanstiate, _maxCubeInstanstiate);
 
-        if (canCreate)
+        for (int i = 0; i < cubesCount; i++)
         {
-            for (int i = 0; i < cubeCount; i++)
-            {
-                var cube = Instantiate(_cubePrefab, transform.position, transform.rotation);
-                cube.Init();               
-            }
+            var cube = Instantiate(_currentCube, transform.position, transform.rotation);
+            cube.Init();
         }
 
         return cubes;
