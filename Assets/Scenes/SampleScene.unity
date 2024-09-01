@@ -862,6 +862,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2588246905805519428, guid: ab73ea6072f85a442809af381ee58c08, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2588246905805519430, guid: ab73ea6072f85a442809af381ee58c08, type: 3}
       propertyPath: m_Name
       value: Cube

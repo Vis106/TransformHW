@@ -9,25 +9,42 @@ public class Creator : MonoBehaviour
 
     private int _maxCubeInstanstiate = 6;
     private int _minCubeInstanstiate = 2;
-    private Cube _cubePrefab;
 
-    public void Divide(Cube _currentCube)
+    public void Divide(Cube _currentCube, bool isDivided, float explosionScale)
     {
-        Explode(CreateCubes(_currentCube));   
+        if (isDivided)
+            Explode(CreateCubes(_currentCube), explosionScale);
+        else
+            Explode(GetExplodableCubes(), explosionScale);
     }
 
-    private void Explode(List<Cube> cubes)
+    private void Explode(List<Rigidbody> cubes, float explosionScale)
     {
-        foreach (Cube explodableObject in cubes)
+        foreach (Rigidbody explodableObject in cubes)
         {
             explodableObject.TryGetComponent<Rigidbody>(out Rigidbody explodableCube);
-            explodableCube?.AddExplosionForce(_explotionForce, transform.position, _explotionRadius);
+            explodableCube?.AddExplosionForce(_explotionForce* explosionScale, transform.position, _explotionRadius);
         }
     }
 
-    private List<Cube> CreateCubes(Cube _currentCube)
+    private List<Rigidbody> GetExplodableCubes()
     {
-        List<Cube> cubes = new();
+        Collider[] hits = Physics.OverlapSphere(transform.position, _explotionRadius);
+
+        List<Rigidbody> cubes = new();
+
+        foreach (var hit in hits)
+        {
+            if (hit.attachedRigidbody != null)
+                cubes.Add(hit.attachedRigidbody);
+        }
+
+        return cubes;
+    }
+
+    private List<Rigidbody> CreateCubes(Cube _currentCube)
+    {
+        List<Rigidbody> cubes = new();
         int cubesCount = Random.Range(_minCubeInstanstiate, _maxCubeInstanstiate);
 
         for (int i = 0; i < cubesCount; i++)
