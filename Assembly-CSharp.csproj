@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Cube.cs" />
     <Compile Include="Assets\Scripts\Creator.cs" />
+    <Compile Include="Assets\Scripts\Exploader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

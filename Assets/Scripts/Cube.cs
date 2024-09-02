@@ -10,13 +10,18 @@ public class Cube : MonoBehaviour
     [SerializeField] private float _explosionScale = 1;
     [SerializeField] private float _increaseExplosionScale = 1.5f;
     [SerializeField] private Creator _creator;
+    [SerializeField] private Exploader _exploader;
 
     private int _maxChance = 100;
     private int _minChance = 1;
 
     private void OnMouseUpAsButton()
     {
-        _creator.Divide(this, CanDivide(), _explosionScale);
+        if (CanDivide())
+            _exploader.Explode(_creator.CreateCubes(this), _explosionScale);
+        else
+            _exploader.Explode(_exploader.GetExplodableCubes(), _explosionScale);
+
         Destroy(gameObject);
     }
 

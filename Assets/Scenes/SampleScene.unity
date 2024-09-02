@@ -855,6 +855,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1994513610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2588246905805519430, guid: ab73ea6072f85a442809af381ee58c08, type: 3}
+  m_PrefabInstance: {fileID: 2588246907522187331}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1994513618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994513610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460d97f5b45668546b380021f62f9efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explotionForce: 500
+  _explotionRadius: 50
 --- !u!1001 &2588246907522187331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -866,6 +885,10 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2588246905805519429, guid: ab73ea6072f85a442809af381ee58c08, type: 3}
+      propertyPath: _exploader
+      value: 
+      objectReference: {fileID: 1994513618}
     - target: {fileID: 2588246905805519430, guid: ab73ea6072f85a442809af381ee58c08, type: 3}
       propertyPath: m_Name
       value: Cube
@@ -874,6 +897,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2588246905805519435, guid: ab73ea6072f85a442809af381ee58c08, type: 3}
+      propertyPath: _exploader
+      value: 
+      objectReference: {fileID: 1994513618}
     - target: {fileID: 2588246905805519435, guid: ab73ea6072f85a442809af381ee58c08, type: 3}
       propertyPath: _decreaseScaleRate
       value: 2
