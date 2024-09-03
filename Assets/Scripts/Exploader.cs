@@ -15,6 +15,11 @@ public class Exploader : MonoBehaviour
         }
     }
 
+    public void ExplodeAll(float explosionScale)
+    {
+        Explode(GetExplodableCubes(), explosionScale);
+    }
+
     public List<Rigidbody> GetExplodableCubes()
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, _explotionRadius);

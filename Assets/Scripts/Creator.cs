@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Creator : MonoBehaviour
 {
-    private int _maxCubeInstanstiate = 6;
+    private int _maxCubeInstanstiate = 7;
     private int _minCubeInstanstiate = 2;
 
     public List<Rigidbody> CreateCubes(Cube _currentCube)
@@ -15,6 +15,7 @@ public class Creator : MonoBehaviour
         {
             var cube = Instantiate(_currentCube, transform.position, transform.rotation);
             cube.Init();
+            cubes.Add(cube.GetComponent<Rigidbody>());
         }
 
         return cubes;

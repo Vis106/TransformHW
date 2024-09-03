@@ -20,7 +20,7 @@ public class Cube : MonoBehaviour
         if (CanDivide())
             _exploader.Explode(_creator.CreateCubes(this), _explosionScale);
         else
-            _exploader.Explode(_exploader.GetExplodableCubes(), _explosionScale);
+            _exploader.ExplodeAll(_explosionScale);
 
         Destroy(gameObject);
     }
